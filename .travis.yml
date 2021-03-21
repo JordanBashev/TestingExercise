@@ -1,0 +1,13 @@
+language: csharp
+mono: none
+sudo: false
+dist: bionic
+dotnet: 3.0
+before_install:  
+  - sudo apt-get install -y dotnet-runtime-2.2
+script:  
+  - dotnet --version
+  - cd ./TestingExercise
+  - dotnet restore
+  - dotnet build
+  - dotnet test ./HeroesGame.Tests/HeroesGame.Tests.csproj
